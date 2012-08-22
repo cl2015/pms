@@ -70,10 +70,10 @@ class ResearchDirection extends TrackStarActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'sort' => 'ÅÅÐò',
-			'name' => 'Ãû³Æ',
-			'code' => '´úºÅ',
-			'academic_leader' => 'Ñ§Êõ´øÍ·ÈË',
+			'sort' => 'æŽ’åº',
+			'name' => 'åç§°',
+			'code' => 'ä»£å·',
+			'academic_leader' => 'å­¦æœ¯å¸¦å¤´äºº',
 			'created_by' => 'Created By',
 			'created_at' => 'Created At',
 			'updated_by' => 'Updated By',

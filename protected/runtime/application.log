@@ -1341,3 +1341,93 @@ Stack trace:
 REQUEST_URI=/~lihe/pms/index.php/equipment/index
 HTTP_REFERER=http://localhost/~lihe/pms/index.php/standard/index
 ---
+2012/08/22 17:20:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "standard/index"。' in /Users/lihe/Sites/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/lihe/Sites/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('standard/index')
+#1 /Users/lihe/Sites/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/lihe/Sites/pms/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/~lihe/pms/index.php/standard/index
+HTTP_REFERER=http://192.168.1.117/~lihe/pms/index.php
+---
+2012/08/22 17:20:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "equipment/index"。' in /Users/lihe/Sites/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/lihe/Sites/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('equipment/index')
+#1 /Users/lihe/Sites/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/lihe/Sites/pms/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/~lihe/pms/index.php/equipment/index
+HTTP_REFERER=http://192.168.1.117/~lihe/pms/index.php/standard/index
+---
+2012/08/22 17:20:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "organizingConference/index"。' in /Users/lihe/Sites/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/lihe/Sites/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('organizingConfe...')
+#1 /Users/lihe/Sites/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/lihe/Sites/pms/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/~lihe/pms/index.php/organizingConference/index
+HTTP_REFERER=http://192.168.1.117/~lihe/pms/index.php/equipment/index
+---
+2012/08/22 17:20:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "seminars/index"。' in /Users/lihe/Sites/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/lihe/Sites/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('seminars/index')
+#1 /Users/lihe/Sites/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/lihe/Sites/pms/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/~lihe/pms/index.php/seminars/index
+HTTP_REFERER=http://192.168.1.117/~lihe/pms/index.php/organizingConference/index
+---
+2012/08/22 17:20:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "attendConference/index"。' in /Users/lihe/Sites/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/lihe/Sites/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('attendConferenc...')
+#1 /Users/lihe/Sites/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/lihe/Sites/pms/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/~lihe/pms/index.php/attendConference/index
+HTTP_REFERER=http://192.168.1.117/~lihe/pms/index.php/seminars/index
+---
+2012/08/22 17:20:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "member/index"。' in /Users/lihe/Sites/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/lihe/Sites/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('member/index')
+#1 /Users/lihe/Sites/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/lihe/Sites/pms/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/~lihe/pms/index.php/member/index
+HTTP_REFERER=http://192.168.1.117/~lihe/pms/index.php/attendConference/index
+---
+2012/08/22 17:24:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "organizingConference/index"。' in /Users/lihe/Sites/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/lihe/Sites/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('organizingConfe...')
+#1 /Users/lihe/Sites/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/lihe/Sites/pms/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/~lihe/pms/index.php/organizingConference/index
+HTTP_REFERER=http://localhost/~lihe/pms/index.php/laboratory/create
+---
+2012/08/22 17:25:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "committee/index"。' in /Users/lihe/Sites/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/lihe/Sites/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('committee/index')
+#1 /Users/lihe/Sites/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/lihe/Sites/pms/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/~lihe/pms/index.php/committee/index
+HTTP_REFERER=http://localhost/~lihe/pms/index.php/researchDirection/index
+---
+2012/08/22 17:26:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "member/index"。' in /Users/lihe/Sites/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/lihe/Sites/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('member/index')
+#1 /Users/lihe/Sites/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/lihe/Sites/pms/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/~lihe/pms/index.php/member/index
+HTTP_REFERER=http://localhost/~lihe/pms/index.php/subjectCategory/index
+---
+2012/08/22 17:26:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "member/index"。' in /Users/lihe/Sites/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/lihe/Sites/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('member/index')
+#1 /Users/lihe/Sites/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/lihe/Sites/pms/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/~lihe/pms/index.php/member/index
+HTTP_REFERER=http://localhost/~lihe/pms/index.php/site/index
+---
