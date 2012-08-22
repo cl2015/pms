@@ -121,11 +121,14 @@ class ProjectController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+	public function actionIndex($category='')
 	{
-		$dataProvider=new CActiveDataProvider('Project');
+		$model = new Project();
+		$model->category = $category;
+		$dataProvider=new CActiveDataProvider('Project' , array( 'criteria'=>array('order'=>'sort ASC', )));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 		));
 	}
 

@@ -119,7 +119,7 @@ class PaperCategoryController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PaperCategory');
+		$dataProvider=new CActiveDataProvider('PaperCategory' , array( 'criteria'=>array('order'=>'sort ASC', )));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

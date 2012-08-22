@@ -119,7 +119,7 @@ class SubjectCategoryController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('SubjectCategory');
+		$dataProvider=new CActiveDataProvider('SubjectCategory' , array( 'criteria'=>array('order'=>'sort ASC', )));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

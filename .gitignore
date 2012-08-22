@@ -2,6 +2,16 @@
 .DS_Store
 assets/*
 
-.settings/org.eclipse.core.resources.prefs
-
+.settings/*
 .project
+*.swp
+
+.buildpath
+
+.settings/org.eclipse.php.core.prefs
+
+*.log
+
+*.log
+
+protected/runtime/application.log

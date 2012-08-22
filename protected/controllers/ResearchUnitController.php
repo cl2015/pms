@@ -119,7 +119,7 @@ class ResearchUnitController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('ResearchUnit');
+		$dataProvider=new CActiveDataProvider('ResearchUnit' , array( 'criteria'=>array('order'=>'sort ASC', )));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
