@@ -38,7 +38,7 @@
 				array('label'=>'标准','url'=>array('/standard/index')),
 				array('label'=>'设备','url'=>array('/equipment/index')),
 				array('label'=>'主办学术会议','url'=>array('/organizingConference/index')),
-				array('label'=>'举办讲座','url'=>array('/seminars/index')),
+				array('label'=>'举办讲座','url'=>array('/lecture/index')),
 				array('label'=>'参加学术会议','url'=>array('/attendConference/index')),
 				array('label'=>'一般学术活动','url'=>array('/activity/index')),
 				array('label'=>'学术委员会组成','url'=>array('/committee/index')),
