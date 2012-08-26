@@ -14,7 +14,30 @@ $this->menu=array(
 
 <h1>人员</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'member-grid',
 	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
+	'enableSorting'=>false,
+	'columns'=>array(
+		array(
+			'type'=>'raw',
+			'value'=>'CHtml::link(CHtml::encode($data->id), array("view", "id"=>$data->id));',
+			'name'=>'id',
+		),
+		'sort',
+		'research_direction',
+		'research_unit',
+		'name',
+		'english_name',
+		'date_of_birth',
+		'gender',
+		'qualification',
+		'degree',
+		'title',
+		'area_of_expertise',
+		'phd_mentor',
+		'master_mentor',
+		'enter_date',
+		'out_date',
+	),
 )); ?>

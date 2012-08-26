@@ -3,16 +3,16 @@
 /* @var $model Committee */
 
 $this->breadcrumbs=array(
-	'Committees'=>array('index'),
-	'Create',
+	'学术委员会'=>array('index'),
+	'创建',
 );
 
 $this->menu=array(
-	array('label'=>'List Committee', 'url'=>array('index')),
-	array('label'=>'Manage Committee', 'url'=>array('admin')),
+	array('label'=>'列表', 'url'=>array('index')),
+	array('label'=>'管理', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Committee</h1>
+<h1>创建学术委员会</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

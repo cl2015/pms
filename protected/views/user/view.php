@@ -25,9 +25,5 @@ $this->menu=array(
 		'name',
 		'password',
 		'role',
-		'created_by',
-		'created_at',
-		'updated_by',
-		'updated_at',
 	),
 )); ?>

@@ -3,17 +3,40 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Committees',
+	'学术委员会',
 );
 
 $this->menu=array(
-	array('label'=>'Create Committee', 'url'=>array('create')),
-	array('label'=>'Manage Committee', 'url'=>array('admin')),
+	array('label'=>'创建', 'url'=>array('create')),
+	array('label'=>'管理', 'url'=>array('admin')),
 );
 ?>
-<h1>Committees</h1>
+<h1>学术委员会</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'committee-grid',
 	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
+	'enableSorting'=>false,
+	'columns'=>array(
+		array(
+			'type'=>'raw',
+			'value'=>'CHtml::link(CHtml::encode($data->id), array("view", "id"=>$data->id));',
+			'name'=>'id',
+		),
+		'name',
+		'gender',
+		'date_of_bitrh',
+		'educational_background',
+		'title',
+		'position',
+		'specialty',
+		'organization',
+		'contact',
+		/*
+		'created_by',
+		'created_at',
+		'updated_by',
+		'updated_at',
+		*/
+	),
 )); ?>

@@ -3,18 +3,31 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Lecture Categories',
+	'讲座类别',
 );
 
 $this->menu=array(
-	array('label'=>'Create LectureCategory', 'url'=>array('create')),
-	array('label'=>'Manage LectureCategory', 'url'=>array('admin')),
+	array('label'=>'创建', 'url'=>array('create')),
+	array('label'=>'管理', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Lecture Categories</h1>
+<h1>讲座类别</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'lecture-category-grid',
 	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
+	'enableSorting'=>false,
+	'columns'=>array(
+		array(
+			'type'=>'raw',
+			'value'=>'CHtml::link(CHtml::encode($data->id), array("view", "id"=>$data->id));',
+			'name'=>'id',
+		),
+		'sort',
+		'name',
+		'score',
+	),
 )); ?>
+
+

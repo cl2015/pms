@@ -33,7 +33,6 @@
 	<?php echo CHtml::encode($data->position); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('specialty')); ?>:</b>
 	<?php echo CHtml::encode($data->specialty); ?>
 	<br />
@@ -46,6 +45,7 @@
 	<?php echo CHtml::encode($data->contact); ?>
 	<br />
 
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created_by')); ?>:</b>
 	<?php echo CHtml::encode($data->created_by); ?>
 	<br />

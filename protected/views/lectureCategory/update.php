@@ -3,19 +3,19 @@
 /* @var $model LectureCategory */
 
 $this->breadcrumbs=array(
-	'Lecture Categories'=>array('index'),
+	'讲座类别'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),
-	'Update',
+	'更新',
 );
 
 $this->menu=array(
-	array('label'=>'List LectureCategory', 'url'=>array('index')),
-	array('label'=>'Create LectureCategory', 'url'=>array('create')),
-	array('label'=>'View LectureCategory', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage LectureCategory', 'url'=>array('admin')),
+	array('label'=>'列表', 'url'=>array('index')),
+	array('label'=>'创建', 'url'=>array('create')),
+	array('label'=>'查看', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'管理', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update LectureCategory <?php echo $model->id; ?></h1>
+<h1>更新讲座类别 <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

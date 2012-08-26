@@ -14,7 +14,23 @@ $this->menu=array(
 
 <h1>论著</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'paper-grid',
 	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
+	'enableSorting'=>false,
+	'columns'=>array(
+		array(
+			'type'=>'raw',
+			'value'=>'CHtml::link(CHtml::encode($data->id), array("view", "id"=>$data->id));',
+			'name'=>'id',
+		),
+		'title',
+		'author',
+		'post_time',
+		'periodical_info',
+		'paper_category',
+		'research_direction',
+		'detail',
+	),
 )); ?>
+

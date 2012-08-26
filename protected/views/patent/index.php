@@ -14,7 +14,21 @@ $this->menu=array(
 
 <h1>专利</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'patent-grid',
 	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
+	'enableSorting'=>false,
+	'columns'=>array(
+		array(
+			'type'=>'raw',
+			'value'=>'CHtml::link(CHtml::encode($data->id), array("view", "id"=>$data->id));',
+			'name'=>'id',
+		),
+		'title',
+		'inventor',
+		'accept_time',
+		'authorized_time',
+		'is_sale',
+		'detail',
+	),
 )); ?>

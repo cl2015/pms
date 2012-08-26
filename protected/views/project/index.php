@@ -25,30 +25,34 @@ $this->menu=array(
 	</div>
 <?php $this->endWidget(); ?>
 </div>
-<table class='view' style="width:1160px;">
-  <tr>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('id')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('sort')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('category')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('name')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('owner')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('members')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('begin_date')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('end_date')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('total_funding')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('first_funding')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('second_funding')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('third_funding')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('forth_funding')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('fif_funding')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('equipment_funding')); ?></th>
-    <th><?php echo CHtml::encode(Project::model()->getAttributeLabel('research_direction')); ?></th>
-  </tr>
-<?php $this->widget('zii.widgets.CListView', array(
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'project-grid',
 	'dataProvider'=>$dataProvider,
-	'itemView'=>'_tableview',
+	'enableSorting'=>false,
+	'columns'=>array(
+		array(
+			'type'=>'raw',
+			'value'=>'CHtml::link(CHtml::encode($data->id), array("view", "id"=>$data->id));',
+			'name'=>'id',
+		),
+		'sort',
+		'category',
+		'name',
+		'owner',
+		'members',
+		'begin_date',
+		'end_date',
+		'total_funding',
+		'first_funding',
+		'second_funding',
+		'third_funding',
+		'forth_funding',
+		'fif_funding',
+		'equipment_funding',
+		'research_direction',
+	),
 )); ?>
-</table>
+
 
 <script>
 function jump(id){

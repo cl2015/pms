@@ -3,20 +3,20 @@
 /* @var $model Committee */
 
 $this->breadcrumbs=array(
-	'Committees'=>array('index'),
+	'学术委员会'=>array('index'),
 	$model->name,
 );
 
 $this->menu=array(
-	array('label'=>'List Committee', 'url'=>array('index')),
-	array('label'=>'Create Committee', 'url'=>array('create')),
-	array('label'=>'Update Committee', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Committee', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Committee', 'url'=>array('admin')),
+	array('label'=>'列表', 'url'=>array('index')),
+	array('label'=>'创建', 'url'=>array('create')),
+	array('label'=>'更新', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'删除', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'管理', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Committee #<?php echo $model->id; ?></h1>
+<h1>查看学术委员会 #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -31,9 +31,5 @@ $this->menu=array(
 		'specialty',
 		'organization',
 		'contact',
-		'created_by',
-		'created_at',
-		'updated_by',
-		'updated_at',
 	),
 )); ?>

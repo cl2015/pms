@@ -21,6 +21,7 @@
 	<?php echo CHtml::encode($data->score); ?>
 	<br />
 
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created_by')); ?>:</b>
 	<?php echo CHtml::encode($data->created_by); ?>
 	<br />
@@ -33,7 +34,6 @@
 	<?php echo CHtml::encode($data->updated_by); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('updated_at')); ?>:</b>
 	<?php echo CHtml::encode($data->updated_at); ?>
 	<br />
