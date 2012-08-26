@@ -11,7 +11,7 @@
  Target Server Version : 50527
  File Encoding         : utf-8
 
- Date: 08/26/2012 10:07:25 AM
+ Date: 08/26/2012 11:28:50 AM
 */
 
 SET NAMES utf8;
@@ -375,6 +375,31 @@ CREATE TABLE `research_units` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `research_units` VALUES ('1', '255', '研究单元1', '代号单元1', '负责人1', null, '1', '2012-08-24 17:55:59', '1', '2012-08-24 17:55:59');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `standards`
+-- ----------------------------
+DROP TABLE IF EXISTS `standards`;
+CREATE TABLE `standards` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(256) DEFAULT NULL,
+  `code` varchar(256) DEFAULT NULL,
+  `completed_by` varchar(256) DEFAULT NULL,
+  `publish_time` varchar(256) DEFAULT NULL,
+  `category` varchar(64) DEFAULT NULL,
+  `created_by` int(10) unsigned DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_by` int(10) unsigned DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `standards`
+-- ----------------------------
+BEGIN;
+INSERT INTO `standards` VALUES ('1', '标准1', '标准号1', '完成单位1', '2012-01-10', '国际标准', '1', '2012-08-26 11:27:31', '1', '2012-08-26 11:27:31');
 COMMIT;
 
 -- ----------------------------
