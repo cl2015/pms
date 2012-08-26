@@ -40,6 +40,11 @@
 		<?php echo $form->label($model,'is_sale'); ?>
 		<?php echo $form->textField($model,'is_sale',array('size'=>60,'maxlength'=>64)); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->label($model,'detail'); ?>
+		<?php echo $form->textField($model,'detail',array('size'=>60,'maxlength'=>256)); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('搜索'); ?>

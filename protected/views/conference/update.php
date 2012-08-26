@@ -1,9 +1,9 @@
 <?php
-/* @var $this HonorController */
-/* @var $model Honor */
+/* @var $this ConferenceController */
+/* @var $model Conference */
 
 $this->breadcrumbs=array(
-	'奖励'=>array('index'),
+	'学术会议'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),
 	'更新',
 );
@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>更新奖励 <?php echo $model->id; ?></h1>
+<h1>更新学术会议 <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

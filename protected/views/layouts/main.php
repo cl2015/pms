@@ -37,11 +37,9 @@
 				array('label'=>'专利','url'=>array('/patent/index')),
 				array('label'=>'标准','url'=>array('/standard/index')),
 				array('label'=>'设备','url'=>array('/equipment/index')),
-				array('label'=>'主办学术会议','url'=>array('/organizingConference/index')),
+				array('label'=>'学术会议','url'=>array('/conference/index')),
 				array('label'=>'举办讲座','url'=>array('/lecture/index')),
-				array('label'=>'参加学术会议','url'=>array('/attendConference/index')),
-				array('label'=>'一般学术活动','url'=>array('/activity/index')),
-				array('label'=>'学术委员会组成','url'=>array('/committee/index')),
+				array('label'=>'学术委员会','url'=>array('/committee/index')),
 					
 				array('label'=>'实验室','url'=>array('/laboratory/index'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
 				array('label'=>'研究单元','url'=>array('/researchUnit/index'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
@@ -65,7 +63,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by cranelee@gmail.com.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by <?php echo Laboratory::model()->find()->copyright;?>.<br/>
 		All Rights Reserved.<br/>
 	</div><!-- footer -->
 

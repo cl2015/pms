@@ -1,27 +1,29 @@
 <?php
 
 /**
- * This is the model class for table "patents".
+ * This is the model class for table "equipments".
  *
- * The followings are the available columns in table 'patents':
+ * The followings are the available columns in table 'equipments':
  * @property string $id
- * @property string $title
- * @property string $inventor
- * @property string $accept_time
- * @property string $authorized_time
- * @property string $is_sale
- * @property string $detail
+ * @property string $name
+ * @property string $price
+ * @property string $enable_time
+ * @property string $current_status
+ * @property string $performance
+ * @property string $level
+ * @property string $effect
+ * @property string $borrow
  * @property string $created_by
  * @property string $created_at
  * @property string $updated_by
  * @property string $updated_at
  */
-class Patent extends TrackStarActiveRecord
+class Equipment extends TrackStarActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Patent the static model class
+	 * @return Equipment the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -33,7 +35,7 @@ class Patent extends TrackStarActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'patents';
+		return 'equipments';
 	}
 
 	/**
@@ -44,15 +46,12 @@ class Patent extends TrackStarActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'length', 'max'=>512),
-			array('inventor', 'length', 'max'=>128),
-			array('accept_time, authorized_time, is_sale', 'length', 'max'=>64),
-			array('detail', 'length', 'max'=>256),
+			array('name, price, enable_time, current_status, performance, level, effect, borrow', 'length', 'max'=>256),
 			array('created_by, updated_by', 'length', 'max'=>10),
 			array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, inventor, accept_time, authorized_time, is_sale, detail,created_by, created_at, updated_by, updated_at', 'safe', 'on'=>'search'),
+			array('id, name, price, enable_time, current_status, performance, level, effect, borrow, created_by, created_at, updated_by, updated_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,12 +73,14 @@ class Patent extends TrackStarActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => '名称',
-			'inventor' => '发明人',
-			'accept_time' => '受理时间',
-			'authorized_time' => '授权时间',
-			'is_sale' => '是否转让',
-			'detail' => '详情',
+			'name' => '设备名称',
+			'price' => '价格',
+			'enable_time' => '启用时间',
+			'current_status' => '启用时间',
+			'performance' => '主要性能指标',
+			'level' => '设备水平',
+			'effect' => '发挥作用',
+			'borrow' => '对外借用情况',
 			'created_by' => 'Created By',
 			'created_at' => 'Created At',
 			'updated_by' => 'Updated By',
@@ -99,12 +100,14 @@ class Patent extends TrackStarActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('inventor',$this->inventor,true);
-		$criteria->compare('accept_time',$this->accept_time,true);
-		$criteria->compare('authorized_time',$this->authorized_time,true);
-		$criteria->compare('is_sale',$this->is_sale,true);
-		$criteria->compare('detail',$this->detail,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('price',$this->price,true);
+		$criteria->compare('enable_time',$this->enable_time,true);
+		$criteria->compare('current_status',$this->current_status,true);
+		$criteria->compare('performance',$this->performance,true);
+		$criteria->compare('level',$this->level,true);
+		$criteria->compare('effect',$this->effect,true);
+		$criteria->compare('borrow',$this->borrow,true);
 		$criteria->compare('created_by',$this->created_by,true);
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_by',$this->updated_by,true);

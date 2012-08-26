@@ -1,6 +1,6 @@
 <?php
-/* @var $this HonorController */
-/* @var $model Honor */
+/* @var $this ConferenceController */
+/* @var $model Conference */
 ?>
 
 <div class="view">
@@ -13,22 +13,30 @@
 	<?php echo CHtml::encode($data->name); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('level')); ?>:</b>
-	<?php echo CHtml::encode($data->level); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('organizer')); ?>:</b>
+	<?php echo CHtml::encode($data->organizer); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('winner')); ?>:</b>
-	<?php echo CHtml::encode($data->winner); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('undertaker')); ?>:</b>
+	<?php echo CHtml::encode($data->undertaker); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('bonus_time')); ?>:</b>
-	<?php echo CHtml::encode($data->bonus_time); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('conference_time')); ?>:</b>
+	<?php echo CHtml::encode($data->conference_time); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('certificate_location')); ?>:</b>
-	<?php echo CHtml::encode($data->certificate_location); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('address')); ?>:</b>
+	<?php echo CHtml::encode($data->address); ?>
 	<br />
-	
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('member')); ?>:</b>
+	<?php echo CHtml::encode($data->member); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('category')); ?>:</b>
+	<?php echo CHtml::encode($data->category); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('detail')); ?>:</b>
 	<?php echo CHtml::encode($data->detail); ?>
 	<br />

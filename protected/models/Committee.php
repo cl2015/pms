@@ -1,27 +1,30 @@
 <?php
 
 /**
- * This is the model class for table "patents".
+ * This is the model class for table "committees".
  *
- * The followings are the available columns in table 'patents':
+ * The followings are the available columns in table 'committees':
  * @property string $id
+ * @property string $name
+ * @property string $gender
+ * @property string $date_of_bitrh
+ * @property string $educational_background
  * @property string $title
- * @property string $inventor
- * @property string $accept_time
- * @property string $authorized_time
- * @property string $is_sale
- * @property string $detail
+ * @property string $position
+ * @property string $specialty
+ * @property string $organization
+ * @property string $contact
  * @property string $created_by
  * @property string $created_at
  * @property string $updated_by
  * @property string $updated_at
  */
-class Patent extends TrackStarActiveRecord
+class Committee extends TrackStarActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Patent the static model class
+	 * @return Committee the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -33,7 +36,7 @@ class Patent extends TrackStarActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'patents';
+		return 'committees';
 	}
 
 	/**
@@ -44,15 +47,12 @@ class Patent extends TrackStarActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'length', 'max'=>512),
-			array('inventor', 'length', 'max'=>128),
-			array('accept_time, authorized_time, is_sale', 'length', 'max'=>64),
-			array('detail', 'length', 'max'=>256),
+			array('name, gender, date_of_bitrh, educational_background, title, position, specialty, organization, contact', 'length', 'max'=>256),
 			array('created_by, updated_by', 'length', 'max'=>10),
 			array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, inventor, accept_time, authorized_time, is_sale, detail,created_by, created_at, updated_by, updated_at', 'safe', 'on'=>'search'),
+			array('id, name, gender, date_of_bitrh, educational_background, title, position, specialty, organization, contact, created_by, created_at, updated_by, updated_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,12 +74,15 @@ class Patent extends TrackStarActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => '名称',
-			'inventor' => '发明人',
-			'accept_time' => '受理时间',
-			'authorized_time' => '授权时间',
-			'is_sale' => '是否转让',
-			'detail' => '详情',
+			'name' => '姓名',
+			'gender' => '性别',
+			'date_of_bitrh' => '出生年月',
+			'educational_background' => '学历',
+			'title' => '职称',
+			'position' => '学委会职务',
+			'specialty' => '专业',
+			'organization' => '工作单位',
+			'contact' => '联系方式',
 			'created_by' => 'Created By',
 			'created_at' => 'Created At',
 			'updated_by' => 'Updated By',
@@ -99,12 +102,15 @@ class Patent extends TrackStarActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('gender',$this->gender,true);
+		$criteria->compare('date_of_bitrh',$this->date_of_bitrh,true);
+		$criteria->compare('educational_background',$this->educational_background,true);
 		$criteria->compare('title',$this->title,true);
-		$criteria->compare('inventor',$this->inventor,true);
-		$criteria->compare('accept_time',$this->accept_time,true);
-		$criteria->compare('authorized_time',$this->authorized_time,true);
-		$criteria->compare('is_sale',$this->is_sale,true);
-		$criteria->compare('detail',$this->detail,true);
+		$criteria->compare('position',$this->position,true);
+		$criteria->compare('specialty',$this->specialty,true);
+		$criteria->compare('organization',$this->organization,true);
+		$criteria->compare('contact',$this->contact,true);
 		$criteria->compare('created_by',$this->created_by,true);
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_by',$this->updated_by,true);

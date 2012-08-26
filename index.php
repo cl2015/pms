@@ -3,6 +3,7 @@
 // change the following paths if necessary
 date_default_timezone_set('Asia/Shanghai');
 $yii=dirname(__FILE__).'/../yii/framework/yii.php';
+//$yii='d:\appserv\www\yii\framework\yii.php
 $config=dirname(__FILE__).'/protected/config/main.php';
 
 // remove the following lines when in production mode

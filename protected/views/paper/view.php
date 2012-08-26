@@ -28,6 +28,7 @@ $this->menu=array(
 		'periodical_info',
 		'paper_category',
 		'research_direction',
+		'detail',
 		/*
 		'created_by',
 		'created_at',

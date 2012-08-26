@@ -23,7 +23,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'category'); ?>
-		<?php echo $form->dropDownList($model,'category',CHtml::listData(SubjectCategory::model()->findAll(),'name','name'),array('empty'=>'请选择')); ?>
+		<?php echo $form->dropDownList($model,'category',CHtml::listData(ResearchDirection::model()->findAll(array('order'=>'sort')),'name','name'),array('empty'=>'请选择')); ?>
 		<?php echo $form->error($model,'category'); ?>
 	</div>
 

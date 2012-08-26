@@ -28,6 +28,10 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('is_sale')); ?>:</b>
 	<?php echo CHtml::encode($data->is_sale); ?>
 	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('detail')); ?>:</b>
+	<?php echo CHtml::encode($data->detail); ?>
+	<br />
 
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created_by')); ?>:</b>

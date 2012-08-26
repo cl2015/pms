@@ -11,6 +11,7 @@
  * @property string $periodical_info
  * @property string $paper_category
  * @property string $research_direction
+ * @property string $detail
  * @property string $created_by
  * @property string $created_at
  * @property string $updated_by
@@ -47,12 +48,12 @@ class Paper extends TrackStarActiveRecord
 			array('title', 'length', 'max'=>512),
 			array('author', 'length', 'max'=>128),
 			array('post_time, periodical_info', 'length', 'max'=>64),
-			array('paper_category, research_direction', 'length', 'max'=>256),
+			array('paper_category, research_direction, detail', 'length', 'max'=>256),
 			array('created_by, updated_by', 'length', 'max'=>10),
 			array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, author, post_time, periodical_info, paper_category, research_direction, created_by, created_at, updated_by, updated_at', 'safe', 'on'=>'search'),
+			array('id, title, author, post_time, periodical_info, paper_category, research_direction,detail, created_by, created_at, updated_by, updated_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -80,6 +81,7 @@ class Paper extends TrackStarActiveRecord
 			'periodical_info' => '期刊信息',
 			'paper_category' => '论著类别',
 			'research_direction' => '方向',
+			'detail' => '详情',
 			'created_by' => 'Created By',
 			'created_at' => 'Created At',
 			'updated_by' => 'Updated By',
@@ -105,6 +107,7 @@ class Paper extends TrackStarActiveRecord
 		$criteria->compare('periodical_info',$this->periodical_info,true);
 		$criteria->compare('paper_category',$this->paper_category,true);
 		$criteria->compare('research_direction',$this->research_direction,true);
+		$criteria->compare('detail',$this->detail,true);
 		$criteria->compare('created_by',$this->created_by,true);
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_by',$this->updated_by,true);

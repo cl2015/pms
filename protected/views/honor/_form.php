@@ -44,6 +44,12 @@
 		<?php echo $form->textField($model,'certificate_location',array('size'=>60,'maxlength'=>64)); ?>
 		<?php echo $form->error($model,'certificate_location'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'detail'); ?>
+		<?php echo $form->textField($model,'detail',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($model,'detail'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? '创建' : '保存'); ?>

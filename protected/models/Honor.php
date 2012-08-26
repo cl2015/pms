@@ -10,6 +10,7 @@
  * @property string $winner
  * @property string $bonus_time
  * @property string $certificate_location
+ * @property string $detail
  * @property string $created_by
  * @property string $created_at
  * @property string $updated_by
@@ -45,11 +46,12 @@ class Honor extends TrackStarActiveRecord
 		return array(
 			array('name', 'length', 'max'=>512),
 			array('level, winner, bonus_time, certificate_location', 'length', 'max'=>64),
+			array('detail', 'length', 'max'=>256),
 			array('created_by, updated_by', 'length', 'max'=>10),
 			array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, level, winner, bonus_time, certificate_location, created_by, created_at, updated_by, updated_at', 'safe', 'on'=>'search'),
+			array('id, name, level, winner, bonus_time, certificate_location, detail, created_by, created_at, updated_by, updated_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,6 +78,7 @@ class Honor extends TrackStarActiveRecord
 			'winner' => '获奖人',
 			'bonus_time' => '奖励时间',
 			'certificate_location' => '证书位置',
+			'detail' => '详情',
 			'created_by' => 'Created By',
 			'created_at' => 'Created At',
 			'updated_by' => 'Updated By',
@@ -100,6 +103,7 @@ class Honor extends TrackStarActiveRecord
 		$criteria->compare('winner',$this->winner,true);
 		$criteria->compare('bonus_time',$this->bonus_time,true);
 		$criteria->compare('certificate_location',$this->certificate_location,true);
+		$criteria->compare('detail',$this->detail,true);
 		$criteria->compare('created_by',$this->created_by,true);
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_by',$this->updated_by,true);

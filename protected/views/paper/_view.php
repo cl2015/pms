@@ -32,6 +32,10 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('research_direction')); ?>:</b>
 	<?php echo CHtml::encode($data->research_direction); ?>
 	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('detail')); ?>:</b>
+	<?php echo CHtml::encode($data->detail); ?>
+	<br />
 
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created_by')); ?>:</b>

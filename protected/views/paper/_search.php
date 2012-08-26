@@ -45,6 +45,11 @@
 		<?php echo $form->label($model,'research_direction'); ?>
 		<?php echo $form->textField($model,'research_direction',array('size'=>60,'maxlength'=>256)); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->label($model,'detail'); ?>
+		<?php echo $form->textField($model,'detail',array('size'=>60,'maxlength'=>256)); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('搜索'); ?>

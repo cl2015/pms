@@ -1,9 +1,9 @@
 <?php
-/* @var $this PatentController */
-/* @var $model Patent */
+/* @var $this EquipmentController */
+/* @var $model Equipment */
 
 $this->breadcrumbs=array(
-	'专利'=>array('index'),
+	'设备'=>array('index'),
 	'管理',
 );
 
@@ -18,7 +18,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('patent-grid', {
+	$.fn.yiiGridView.update('equipment-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>管理专利</h1>
+<h1>管理设备</h1>
 
 <?php echo CHtml::link('高级搜索','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
@@ -36,17 +36,19 @@ $('.search-form form').submit(function(){
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'patent-grid',
+	'id'=>'equipment-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'title',
-		'inventor',
-		'accept_time',
-		'authorized_time',
-		'is_sale',
-		'detail',
+		'name',
+		'price',
+		'enable_time',
+		'current_status',
+		'performance',
+		'level',
+		'effect',
+		'borrow',
 		/*
 		'created_by',
 		'created_at',

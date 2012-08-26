@@ -40,25 +40,10 @@
 		<?php echo $form->label($model,'certificate_location'); ?>
 		<?php echo $form->textField($model,'certificate_location',array('size'=>60,'maxlength'=>64)); ?>
 	</div>
-
+	
 	<div class="row">
-		<?php echo $form->label($model,'created_by'); ?>
-		<?php echo $form->textField($model,'created_by',array('size'=>10,'maxlength'=>10)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'created_at'); ?>
-		<?php echo $form->textField($model,'created_at'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'updated_by'); ?>
-		<?php echo $form->textField($model,'updated_by',array('size'=>10,'maxlength'=>10)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'updated_at'); ?>
-		<?php echo $form->textField($model,'updated_at'); ?>
+		<?php echo $form->label($model,'detail'); ?>
+		<?php echo $form->textField($model,'detail',array('size'=>60,'maxlength'=>256)); ?>
 	</div>
 
 	<div class="row buttons">

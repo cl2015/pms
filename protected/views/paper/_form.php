@@ -50,6 +50,12 @@
 		<?php echo $form->dropDownList($model,'research_direction',CHtml::listData(ResearchDirection::model()->findAll(),'name','name'),array('empty'=>'请选择')); ?>
 		<?php echo $form->error($model,'research_direction'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'detail'); ?>
+		<?php echo $form->textField($model,'detail',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($model,'detail'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? '创建' : '保存'); ?>
