@@ -18,6 +18,9 @@
  * @property double $third_funding
  * @property double $forth_funding
  * @property double $fif_funding
+ * @property double $funding_2014
+ * @property double $funding_2015
+ * @property double $funding_2016
  * @property double $equipment_funding
  * @property string $research_direction
  * @property string $created_by
@@ -56,7 +59,7 @@ class Project extends TrackStarActiveRecord
 			array('category','required'),	
 				
 			array('sort', 'numerical', 'integerOnly'=>true),
-			array('total_funding, first_funding, second_funding, third_funding, forth_funding, fif_funding, equipment_funding', 'numerical'),
+			array('total_funding, first_funding, second_funding, third_funding, forth_funding, fif_funding, funding_2014 , funding_2015 , funding_2016 ,  equipment_funding', 'numerical'),
 			array('category, name, research_direction', 'length', 'max'=>256),
 			array('owner', 'length', 'max'=>128),
 			array('members', 'length', 'max'=>512),
@@ -95,11 +98,14 @@ class Project extends TrackStarActiveRecord
 			'begin_date' => '开始时间',
 			'end_date' => '结束时间',
 			'total_funding' => '总经费',
-			'first_funding' => '第一年经费',
-			'second_funding' => '第二年经费',
-			'third_funding' => '第三年经费',
-			'forth_funding' => '第四年经费',
-			'fif_funding' => '第五年经费',
+			'first_funding' => '2009',
+			'second_funding' => '2010',
+			'third_funding' => '2011',
+			'forth_funding' => '2012',
+			'fif_funding' => '2013',
+			'funding_2014' => '2014',
+			'funding_2015' => '2015',
+			'funding_2016' => '2016',
 			'equipment_funding' => '设备采购费',
 			'research_direction' => '所属方向',
 			'created_by' => 'Created By',
@@ -134,6 +140,9 @@ class Project extends TrackStarActiveRecord
 		$criteria->compare('third_funding',$this->third_funding);
 		$criteria->compare('forth_funding',$this->forth_funding);
 		$criteria->compare('fif_funding',$this->fif_funding);
+		$criteria->compare('funding_2014',$this->funding_2014);
+		$criteria->compare('funding_2015',$this->funding_2015);
+		$criteria->compare('funding_2016',$this->funding_2016);
 		$criteria->compare('equipment_funding',$this->equipment_funding);
 		$criteria->compare('research_direction',$this->research_direction,true);
 		$criteria->compare('created_by',$this->created_by,true);

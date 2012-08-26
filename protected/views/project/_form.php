@@ -92,13 +92,25 @@
 		<?php echo $form->textField($model,'fif_funding'); ?>
 		<?php echo $form->error($model,'fif_funding'); ?>
 	</div>
-
+	
 	<div class="row">
-		<?php echo $form->labelEx($model,'equipment_funding'); ?>
-		<?php echo $form->textField($model,'equipment_funding'); ?>
-		<?php echo $form->error($model,'equipment_funding'); ?>
+		<?php echo $form->labelEx($model,'funding_2014'); ?>
+		<?php echo $form->textField($model,'funding_2014'); ?>
+		<?php echo $form->error($model,'funding_2014'); ?>
 	</div>
-
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'funding_2015'); ?>
+		<?php echo $form->textField($model,'funding_2015'); ?>
+		<?php echo $form->error($model,'funding_2015'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'funding_2016'); ?>
+		<?php echo $form->textField($model,'funding_2016'); ?>
+		<?php echo $form->error($model,'funding_2016'); ?>
+	</div>
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'research_direction'); ?>
 		<?php echo $form->textField($model,'research_direction',array('size'=>60,'maxlength'=>256)); ?>

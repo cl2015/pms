@@ -61,8 +61,16 @@
 	<?php echo CHtml::encode($data->fif_funding); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('equipment_funding')); ?>:</b>
-	<?php echo CHtml::encode($data->equipment_funding); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('funding_2014')); ?>:</b>
+	<?php echo CHtml::encode($data->funding_2014); ?>
+	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('funding_2015')); ?>:</b>
+	<?php echo CHtml::encode($data->funding_2015); ?>
+	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('funding_2016')); ?>:</b>
+	<?php echo CHtml::encode($data->funding_2016); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('research_direction')); ?>:</b>

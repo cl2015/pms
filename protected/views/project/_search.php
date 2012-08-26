@@ -82,8 +82,18 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'equipment_funding'); ?>
-		<?php echo $form->textField($model,'equipment_funding'); ?>
+		<?php echo $form->label($model,'funding_2014'); ?>
+		<?php echo $form->textField($model,'funding_2014'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->label($model,'funding_2015'); ?>
+		<?php echo $form->textField($model,'funding_2015'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->label($model,'funding_2016'); ?>
+		<?php echo $form->textField($model,'funding_2016'); ?>
 	</div>
 
 	<div class="row">
