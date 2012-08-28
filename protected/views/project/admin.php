@@ -54,7 +54,9 @@ $('.search-form form').submit(function(){
 		'third_funding',
 		'forth_funding',
 		'fif_funding',
-		'equipment_funding',
+		'funding_2014',
+		'funding_2015',
+		'funding_2016',
 		'research_direction',
 		/*
 		'created_by',
