@@ -20,6 +20,16 @@
 		<?php echo $form->label($model,'name'); ?>
 		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>512)); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'species'); ?>
+		<?php echo $form->textField($model,'species',array('size'=>60,'maxlength'=>64)); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'category'); ?>
+		<?php echo $form->textField($model,'category',array('size'=>60,'maxlength'=>64)); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'level'); ?>

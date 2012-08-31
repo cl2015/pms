@@ -25,6 +25,8 @@ $this->menu=array(
 			'name'=>'id',
 		),
 		'name',
+		'species',
+		'category',
 		'level',
 		'winner',
 		'bonus_time',

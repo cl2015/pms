@@ -42,6 +42,8 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'id',
 		'name',
+		'species',
+		'category',
 		'level',
 		'winner',
 		'bonus_time',

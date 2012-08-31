@@ -23,6 +23,8 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'name',
+		'species',
+		'category',
 		'level',
 		'winner',
 		'bonus_time',

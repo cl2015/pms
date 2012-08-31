@@ -12,6 +12,14 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
 	<?php echo CHtml::encode($data->name); ?>
 	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('species')); ?>:</b>
+	<?php echo CHtml::encode($data->species); ?>
+	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('category')); ?>:</b>
+	<?php echo CHtml::encode($data->category); ?>
+	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('level')); ?>:</b>
 	<?php echo CHtml::encode($data->level); ?>

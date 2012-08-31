@@ -22,6 +22,18 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'species'); ?>
+		<?php echo $form->textField($model,'species',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->error($model,'species'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'category'); ?>
+		<?php echo $form->textField($model,'category',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->error($model,'category'); ?>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'level'); ?>
 		<?php echo $form->textField($model,'level',array('size'=>60,'maxlength'=>64)); ?>
 		<?php echo $form->error($model,'level'); ?>

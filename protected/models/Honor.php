@@ -11,6 +11,8 @@
  * @property string $bonus_time
  * @property string $certificate_location
  * @property string $detail
+ * @property string $species
+ * @property string $category
  * @property string $created_by
  * @property string $created_at
  * @property string $updated_by
@@ -46,7 +48,8 @@ class Honor extends TrackStarActiveRecord
 		return array(
 			array('name', 'length', 'max'=>512),
 			array('level, winner, bonus_time, certificate_location', 'length', 'max'=>64),
-			array('detail', 'length', 'max'=>256),
+			array('category, species', 'length', 'max'=>64),
+			array('detail,winner', 'length', 'max'=>255),
 			array('created_by, updated_by', 'length', 'max'=>10),
 			array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
@@ -73,11 +76,13 @@ class Honor extends TrackStarActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => '名称',
-			'level' => '级别',
-			'winner' => '获奖人',
-			'bonus_time' => '奖励时间',
-			'certificate_location' => '证书位置',
+			'name' => '科技成果名称',
+			'species' => '种类',
+			'category' => '类别',
+			'level' => '所获奖项',
+			'winner' => '负责人及主要完成者',
+			'bonus_time' => '授奖时间',
+			'certificate_location' => '授奖单位',
 			'detail' => '详情',
 			'created_by' => 'Created By',
 			'created_at' => 'Created At',
@@ -113,4 +118,28 @@ class Honor extends TrackStarActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	/**
+	 * 负责人和主要完成者不属于本实验室者请标注“#”。
+	 * @see CActiveRecord::beforeSave()
+	 */
+	
+	public function beforeSave(){
+		parent::beforeSave();
+		if(isset($this->winner)){
+			$this->winner = str_replace('#','',$this->winner);
+			$winnerArr = explode('、',$this->winner);
+			$this->winner = '';
+			//var_dump($winnerArr);
+			foreach($winnerArr as $winner){
+				$member = Member::model()->findByAttributes(array('name'=>trim($winner)));
+				if($member === null){
+					$this->winner .= $this->winner == ''?$winner . '#':'、'.$winner . '#';
+				}else{
+					$this->winner .= $this->winner == ''?$winner :'、'.$winner;
+				}
+			}
+		}
+		return true;
+	}
+	
 }
