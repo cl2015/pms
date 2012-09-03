@@ -123,7 +123,11 @@ class StandardController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Standard');
+		$dataProvider=new CActiveDataProvider('Standard',
+						array('pagination'=>array(
+									'pageSize'=>'100'
+							)
+				));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'列表', 'url'=>array('index')),
-	array('label'=>'创建', 'url'=>array('create')),
+	//array('label'=>'列表', 'url'=>array('index')),
+	//array('label'=>'创建', 'url'=>array('create')),
 	array('label'=>'查看', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'管理', 'url'=>array('admin')),
+	//array('label'=>'管理', 'url'=>array('admin')),
 );
 ?>
 

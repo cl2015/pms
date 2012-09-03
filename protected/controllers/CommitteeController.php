@@ -123,7 +123,11 @@ class CommitteeController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Committee');
+		$dataProvider=new CActiveDataProvider('Committee',
+				array('pagination'=>array(
+								'pageSize'=>'100'
+						)
+				));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

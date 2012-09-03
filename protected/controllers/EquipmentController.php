@@ -123,7 +123,11 @@ class EquipmentController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Equipment');
+		$dataProvider=new CActiveDataProvider('Equipment',
+				array('pagination'=>array(
+								'pageSize'=>'100'
+						)
+				));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

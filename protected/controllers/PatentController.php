@@ -123,7 +123,11 @@ class PatentController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Patent');
+		$dataProvider=new CActiveDataProvider('Patent',
+				array('pagination'=>array(
+							'pageSize'=>'100'
+						)
+				));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

@@ -123,7 +123,11 @@ class PaperController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Paper');
+		$dataProvider=new CActiveDataProvider('Paper',
+				array('pagination'=>array(
+							'pageSize'=>'100'
+						)
+				));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

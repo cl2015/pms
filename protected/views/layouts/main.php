@@ -41,7 +41,7 @@
 				array('label'=>'举办讲座','url'=>array('/lecture/index')),
 				array('label'=>'学术委员会','url'=>array('/committee/index')),
 					
-				array('label'=>'实验室','url'=>array('/laboratory/index'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
+				array('label'=>'实验室','url'=>array('/laboratory/view/1'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
 				array('label'=>'研究单元','url'=>array('/researchUnit/index'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
 				array('label'=>'研究方向','url'=>array('/researchDirection/index'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
 				array('label'=>'课题类别','url'=>array('/subjectCategory/index'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),

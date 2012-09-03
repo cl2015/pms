@@ -119,7 +119,12 @@ class LectureCategoryController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('LectureCategory', array( 'criteria'=>array('order'=>'sort ASC', )));
+		$dataProvider=new CActiveDataProvider('LectureCategory', 
+				array( 'criteria'=>array('order'=>'sort ASC', ),
+						'pagination'=>array(
+								'pageSize'=>'100'
+						),
+				));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

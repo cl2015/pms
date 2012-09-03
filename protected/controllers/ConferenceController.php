@@ -123,7 +123,11 @@ class ConferenceController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Conference');
+		$dataProvider=new CActiveDataProvider('Conference',
+				array('pagination'=>array(
+								'pageSize'=>'100'
+						)
+				));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

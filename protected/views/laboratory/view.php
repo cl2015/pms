@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'列表', 'url'=>array('index')),
-	array('label'=>'创建', 'url'=>array('create')),
+	//array('label'=>'列表', 'url'=>array('index')),
+	//array('label'=>'创建', 'url'=>array('create')),
 	array('label'=>'更新', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'删除', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'确认删除?')),
-	array('label'=>'管理', 'url'=>array('admin')),
+	//array('label'=>'删除', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'确认删除?')),
+	//array('label'=>'管理', 'url'=>array('admin')),
 );
 ?>
 

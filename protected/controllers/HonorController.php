@@ -123,7 +123,11 @@ class HonorController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Honor');
+		$dataProvider=new CActiveDataProvider('Honor',
+				array('pagination'=>array(
+								'pageSize'=>'100'
+						)
+				));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

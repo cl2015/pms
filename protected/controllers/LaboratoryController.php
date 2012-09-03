@@ -59,6 +59,8 @@ class LaboratoryController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$this->redirect(array('view','id'=>1));
+		Yii::app()->end();
 		$model=new Laboratory;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -107,6 +109,8 @@ class LaboratoryController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$this->redirect(array('view','id'=>1));
+		Yii::app()->end();
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -119,7 +123,13 @@ class LaboratoryController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Laboratory');
+		$this->redirect(array('view','id'=>1));
+		Yii::app()->end();
+		$dataProvider=new CActiveDataProvider('Laboratory',
+				array('pagination'=>array(
+								'pageSize'=>'100'
+						)
+				));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -130,6 +140,8 @@ class LaboratoryController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->redirect(array('view','id'=>1));
+		Yii::app()->end();
 		$model=new Laboratory('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Laboratory']))
