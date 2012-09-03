@@ -29,5 +29,8 @@ $this->menu=array(
 		'winner',
 		'bonus_time',
 		'certificate_location',
+		array('label'=>CHtml::encode($model->getAttributeLabel('detail')),
+				'type'=>'raw',
+				'value'=>CHtml::link(CHtml::encode('查看'),$model->detail,array('target'=>'_blank'))),
 	),
 )); ?>

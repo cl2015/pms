@@ -30,7 +30,9 @@ $this->menu=array(
 		'periodical_info',
 		'paper_category',
 		'research_direction',
-		'detail',
+		array('name'=>'detail',
+			'type'=>'raw',
+            'value'=>'CHtml::link(CHtml::encode("查看"),$data->detail,array("target"=>"_blank"))'),
 	),
 )); ?>
 

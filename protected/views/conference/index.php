@@ -31,6 +31,8 @@ $this->menu=array(
 		'address',
 		'member',
 		'category',
-		'detail',
+		array('name'=>'detail',
+			'type'=>'raw',
+            'value'=>'CHtml::link(CHtml::encode("查看"),$data->detail,array("target"=>"_blank"))'),
 	),
 )); ?>
