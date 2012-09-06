@@ -27,7 +27,9 @@ $this->menu=array(
 		'accept_time',
 		'authorized_time',
 		'is_sale',
-		'detail',
+		array('label'=>CHtml::encode($model->getAttributeLabel('detail')),
+				'type'=>'raw',
+				'value'=>CHtml::link(CHtml::encode('查看'),$model->detail,array('target'=>'_blank'))),
 		/*
 		'created_by',
 		'created_at',

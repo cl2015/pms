@@ -48,8 +48,8 @@ $('.search-form form').submit(function(){
 		'winner',
 		'bonus_time',
 		'certificate_location',
-		'detail',
 		/*
+		'detail',
 		'created_by',
 		'created_at',
 		'updated_by',

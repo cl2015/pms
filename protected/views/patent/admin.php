@@ -46,8 +46,8 @@ $('.search-form form').submit(function(){
 		'accept_time',
 		'authorized_time',
 		'is_sale',
-		'detail',
 		/*
+		'detail',
 		'created_by',
 		'created_at',
 		'updated_by',

@@ -13,15 +13,14 @@
  * @property string $begin_date
  * @property string $end_date
  * @property double $total_funding
- * @property double $first_funding
- * @property double $second_funding
- * @property double $third_funding
- * @property double $forth_funding
- * @property double $fif_funding
+ * @property double $funding_2009
+ * @property double $funding_2010
+ * @property double $funding_2011
+ * @property double $funding_2012
+ * @property double $funding_2013
  * @property double $funding_2014
  * @property double $funding_2015
  * @property double $funding_2016
- * @property double $equipment_funding
  * @property string $research_direction
  * @property string $created_by
  * @property string $created_at
@@ -59,7 +58,7 @@ class Project extends TrackStarActiveRecord
 			array('category','required'),	
 				
 			array('sort', 'numerical', 'integerOnly'=>true),
-			array('total_funding, first_funding, second_funding, third_funding, forth_funding, fif_funding, funding_2014 , funding_2015 , funding_2016 ,  equipment_funding', 'numerical'),
+			array('total_funding, funding_2009, funding_2010, funding_2011, funding_2012, funding_2013, funding_2014 , funding_2015 , funding_2016 ', 'numerical'),
 			array('category, name, research_direction', 'length', 'max'=>256),
 			array('owner', 'length', 'max'=>128),
 			array('members', 'length', 'max'=>512),
@@ -68,7 +67,7 @@ class Project extends TrackStarActiveRecord
 			array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, sort, category, name, owner, members, begin_date, end_date, total_funding, first_funding, second_funding, third_funding, forth_funding, fif_funding, equipment_funding, research_direction, created_by, created_at, updated_by, updated_at', 'safe', 'on'=>'search'),
+			array('id, sort, category, name, owner, members, begin_date, end_date, total_funding, funding_2009, funding_2010, funding_2011, funding_20012, funding_2013,funding_2014,funding_2015,funding_2016, research_direction, created_by, created_at, updated_by, updated_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -98,15 +97,14 @@ class Project extends TrackStarActiveRecord
 			'begin_date' => '开始时间',
 			'end_date' => '结束时间',
 			'total_funding' => '总经费',
-			'first_funding' => '2009',
-			'second_funding' => '2010',
-			'third_funding' => '2011',
-			'forth_funding' => '2012',
-			'fif_funding' => '2013',
+			'funding_2009' => '2009',
+			'funding_2010' => '2010',
+			'funding_2011' => '2011',
+			'funding_2012' => '2012',
+			'funding_2013' => '2013',
 			'funding_2014' => '2014',
 			'funding_2015' => '2015',
 			'funding_2016' => '2016',
-			'equipment_funding' => '设备采购费',
 			'research_direction' => '所属方向',
 			'created_by' => 'Created By',
 			'created_at' => 'Created At',
@@ -135,15 +133,14 @@ class Project extends TrackStarActiveRecord
 		$criteria->compare('begin_date',$this->begin_date,true);
 		$criteria->compare('end_date',$this->end_date,true);
 		$criteria->compare('total_funding',$this->total_funding);
-		$criteria->compare('first_funding',$this->first_funding);
-		$criteria->compare('second_funding',$this->second_funding);
-		$criteria->compare('third_funding',$this->third_funding);
-		$criteria->compare('forth_funding',$this->forth_funding);
-		$criteria->compare('fif_funding',$this->fif_funding);
+		$criteria->compare('funding_2009',$this->funding_2009);
+		$criteria->compare('funding_2010',$this->funding_2010);
+		$criteria->compare('funding_2011',$this->funding_2011);
+		$criteria->compare('funding_2012',$this->funding_2012);
+		$criteria->compare('funding_2013',$this->funding_2013);
 		$criteria->compare('funding_2014',$this->funding_2014);
 		$criteria->compare('funding_2015',$this->funding_2015);
 		$criteria->compare('funding_2016',$this->funding_2016);
-		$criteria->compare('equipment_funding',$this->equipment_funding);
 		$criteria->compare('research_direction',$this->research_direction,true);
 		$criteria->compare('created_by',$this->created_by,true);
 		$criteria->compare('created_at',$this->created_at,true);

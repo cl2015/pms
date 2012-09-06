@@ -48,8 +48,8 @@ $('.search-form form').submit(function(){
 		'address',
 		'member',
 		'category',
-		'detail',
 		/*
+		'detail',
 		'created_by',
 		'created_at',
 		'updated_by',

@@ -23,8 +23,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'category'); ?>
-		<?php echo $form->dropDownList($model,'category',CHtml::listData(ResearchDirection::model()->findAll(array('order'=>'sort')),'name','name'),array('empty'=>'请选择')); ?>
+		<?php echo $form->dropDownList($model,'category',CHtml::listData(SubjectCategory::model()->findAll(array('order'=>'sort')),'name','name'),array('empty'=>'请选择')); ?>
 		<?php echo $form->error($model,'category'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'research_direction'); ?>
+		<?php echo $form->dropDownList($model,'research_direction',CHtml::listData(ResearchDirection::model()->findAll(array('order'=>'sort')),'name','name'),array('empty'=>'请选择')); ?>
+		<?php echo $form->error($model,'research_direction'); ?>
 	</div>
 
 	<div class="row">
@@ -64,33 +70,33 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'first_funding'); ?>
-		<?php echo $form->textField($model,'first_funding'); ?>
-		<?php echo $form->error($model,'first_funding'); ?>
+		<?php echo $form->labelEx($model,'funding_2009'); ?>
+		<?php echo $form->textField($model,'funding_2009'); ?>
+		<?php echo $form->error($model,'funding_2009'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'second_funding'); ?>
-		<?php echo $form->textField($model,'second_funding'); ?>
-		<?php echo $form->error($model,'second_funding'); ?>
+		<?php echo $form->labelEx($model,'funding_2010'); ?>
+		<?php echo $form->textField($model,'funding_2010'); ?>
+		<?php echo $form->error($model,'funding_2010'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'third_funding'); ?>
-		<?php echo $form->textField($model,'third_funding'); ?>
-		<?php echo $form->error($model,'third_funding'); ?>
+		<?php echo $form->labelEx($model,'funding_2011'); ?>
+		<?php echo $form->textField($model,'funding_2011'); ?>
+		<?php echo $form->error($model,'funding_2011'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'forth_funding'); ?>
-		<?php echo $form->textField($model,'forth_funding'); ?>
-		<?php echo $form->error($model,'forth_funding'); ?>
+		<?php echo $form->labelEx($model,'funding_2012'); ?>
+		<?php echo $form->textField($model,'funding_2012'); ?>
+		<?php echo $form->error($model,'funding_2012'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'fif_funding'); ?>
-		<?php echo $form->textField($model,'fif_funding'); ?>
-		<?php echo $form->error($model,'fif_funding'); ?>
+		<?php echo $form->labelEx($model,'funding_2013'); ?>
+		<?php echo $form->textField($model,'funding_2013'); ?>
+		<?php echo $form->error($model,'funding_2013'); ?>
 	</div>
 	
 	<div class="row">
@@ -111,11 +117,7 @@
 		<?php echo $form->error($model,'funding_2016'); ?>
 	</div>
 	
-	<div class="row">
-		<?php echo $form->labelEx($model,'research_direction'); ?>
-		<?php echo $form->textField($model,'research_direction',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'research_direction'); ?>
-	</div>
+	
 	<?php /*?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'created_by'); ?>
