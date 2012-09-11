@@ -25,7 +25,6 @@ $this->menu=array(
 			'name'=>'id',
 		),
 		'name',
-		'director',
 		'dependent',
 		'phone',
 		array(
