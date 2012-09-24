@@ -121,7 +121,7 @@ class UserController extends Controller
 	{
 		$dataProvider=new CActiveDataProvider('User',
 						array('pagination'=>array(
-									'pageSize'=>'100'
+									'pageSize'=>$this->setting->pagesize,
 								)
 						));
 		$this->render('index',array(

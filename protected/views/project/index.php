@@ -20,8 +20,13 @@ $this->menu=array(
 	'enableAjaxValidation'=>false,
 )); ?>
 	<div class="row">
+		<div class="span-6">
 		<?php echo CHtml::encode($model->getAttributeLabel('category')); ?>
 		<?php echo $form->dropDownList($model,'category',CHtml::listData(SubjectCategory::model()->findAll(),'name','name'),array('empty'=>'请选择','onChange'=>'jump(this.value)')); ?>
+		</div>
+		<div class="span-18">
+		<?php echo $form->checkBoxList($model,'category',array(2012,2013,2014,2015),array('template'=>'<div class="span-5"> <span style="float:left;margin-right:10px;">{input}</span><span style="float:left">{label}</span></div>','separator'=>'')); ?>
+		</div>
 	</div>
 <?php $this->endWidget(); ?>
 </div>

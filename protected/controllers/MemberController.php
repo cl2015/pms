@@ -129,7 +129,7 @@ class MemberController extends Controller
 								'order'=>'sort ASC'
 						),
 						'pagination'=>array(
-								'pageSize'=>'100'
+								'pageSize'=>$this->setting->pagesize,
 						)
 				));
 		$this->render('index',array(

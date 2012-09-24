@@ -125,7 +125,7 @@ class PatentController extends Controller
 	{
 		$dataProvider=new CActiveDataProvider('Patent',
 				array('pagination'=>array(
-							'pageSize'=>'100'
+							'pageSize'=>$this->setting->pagesize,
 						)
 				));
 		$this->render('index',array(

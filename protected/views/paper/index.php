@@ -13,7 +13,17 @@ $this->menu=array(
 ?>
 
 <h1>论著</h1>
+<div class="form">
 
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'project-form',
+	'enableAjaxValidation'=>false,
+)); ?>
+<div class="span-18">
+	<?php echo $form->checkBoxList($model,'paper_category',array(2012,2013,2014,2015),array('template'=>'<div class="span-5"> <span style="float:left;margin-right:10px;">{input}</span><span style="float:left">{label}</span></div>','separator'=>'')); ?>
+</div>
+<?php $this->endWidget(); ?>
+</div>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'paper-grid',
 	'dataProvider'=>$dataProvider,

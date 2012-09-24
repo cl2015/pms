@@ -127,7 +127,7 @@ class LaboratoryController extends Controller
 		Yii::app()->end();
 		$dataProvider=new CActiveDataProvider('Laboratory',
 				array('pagination'=>array(
-								'pageSize'=>'100'
+								'pageSize'=>$this->setting->pagesize,
 						)
 				));
 		$this->render('index',array(

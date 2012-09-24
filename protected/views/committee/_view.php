@@ -12,7 +12,11 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
 	<?php echo CHtml::encode($data->name); ?>
 	<br />
-
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('sort')); ?>:</b>
+	<?php echo CHtml::encode($data->sort); ?>
+	<br />
+	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('gender')); ?>:</b>
 	<?php echo CHtml::encode($data->gender); ?>
 	<br />

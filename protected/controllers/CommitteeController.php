@@ -123,9 +123,13 @@ class CommitteeController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Committee',
-				array('pagination'=>array(
-								'pageSize'=>'100'
+		$dataProvider=new CActiveDataProvider('Committee' , 
+				array( 
+						'criteria'=>array(
+								'order'=>'sort ASC'
+						),
+						'pagination'=>array(
+								'pageSize'=>$this->setting->pagesize,
 						)
 				));
 		$this->render('index',array(

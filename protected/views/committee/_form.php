@@ -20,6 +20,12 @@
 		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>256)); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'sort'); ?>
+		<?php echo $form->textField($model,'sort',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($model,'sort'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'gender'); ?>

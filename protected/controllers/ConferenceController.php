@@ -125,7 +125,7 @@ class ConferenceController extends Controller
 	{
 		$dataProvider=new CActiveDataProvider('Conference',
 				array('pagination'=>array(
-								'pageSize'=>'100'
+								'pageSize'=>$this->setting->pagesize,
 						)
 				));
 		$this->render('index',array(

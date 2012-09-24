@@ -24,6 +24,7 @@ $this->menu=array(
 			'name'=>'id',
 		),
 		'name',
+		'sort',
 		'gender',
 		'date_of_bitrh',
 		'educational_background',

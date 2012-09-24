@@ -23,7 +23,17 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+		<div id="mainmenu" style="float:right;">
+			<?php $this->widget('zii.widgets.CMenu',array(
+			'items'=>array(
+				array('label'=>'登录', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'退出 ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'用户管理','url'=>array('/user/index'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
+				array('label'=>'系统设置','url'=>array('/setting/1'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
+			),
+		)); ?>
+		</div>
+		<div id="logo"><?php echo CHtml::encode($this->setting->name); ?></div>
 	</div><!-- header -->
 
 	<div id="mainmenu">
@@ -46,9 +56,9 @@
 				array('label'=>'研究方向','url'=>array('/researchDirection/index'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
 				array('label'=>'课题类别','url'=>array('/subjectCategory/index'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
 				array('label'=>'论著类别','url'=>array('/paperCategory/index'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
-				array('label'=>'用户','url'=>array('/user/index'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
-				array('label'=>'登录', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'退出 ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+// 				array('label'=>'用户','url'=>array('/user/index'),'visible'=>!Yii::app()->user->isGuest&&Yii::app()->user->isAdmin),
+// 				array('label'=>'登录', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+// 				array('label'=>'退出 ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 	</div><!-- mainmenu -->
@@ -62,9 +72,9 @@
 
 	<div class="clear"></div>
 
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by <?php echo Laboratory::model()->find()->copyright;?>.<br/>
-		All Rights Reserved.<br/>
+	<div id="footer" style="font-size:18px;">
+		Copyright &copy; <?php echo date('Y'); ?> by <?php echo $this->setting->copyright;?>.<br/>
+<!-- 		All Rights Reserved.<br/> -->
 	</div><!-- footer -->
 
 </div><!-- page -->

@@ -1,6 +1,6 @@
 <?php
 
-class EquipmentController extends Controller
+class SettingController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -34,7 +34,6 @@ class EquipmentController extends Controller
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
 				'users'=>array('@'),
-				'expression'=>'$user->isAdmin||$user->isEditor',
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
@@ -63,14 +62,14 @@ class EquipmentController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Equipment;
+		$model=new Setting;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Equipment']))
+		if(isset($_POST['Setting']))
 		{
-			$model->attributes=$_POST['Equipment'];
+			$model->attributes=$_POST['Setting'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -92,9 +91,9 @@ class EquipmentController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Equipment']))
+		if(isset($_POST['Setting']))
 		{
-			$model->attributes=$_POST['Equipment'];
+			$model->attributes=$_POST['Setting'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -123,11 +122,7 @@ class EquipmentController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Equipment',
-				array('pagination'=>array(
-								'pageSize'=>$this->setting->pagesize,
-						)
-				));
+		$dataProvider=new CActiveDataProvider('Setting');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -138,10 +133,10 @@ class EquipmentController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Equipment('search');
+		$model=new Setting('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Equipment']))
-			$model->attributes=$_GET['Equipment'];
+		if(isset($_GET['Setting']))
+			$model->attributes=$_GET['Setting'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -155,7 +150,7 @@ class EquipmentController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Equipment::model()->findByPk($id);
+		$model=Setting::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -167,7 +162,7 @@ class EquipmentController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='equipment-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='setting-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

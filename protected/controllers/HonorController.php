@@ -125,7 +125,7 @@ class HonorController extends Controller
 	{
 		$dataProvider=new CActiveDataProvider('Honor',
 				array('pagination'=>array(
-								'pageSize'=>'100'
+								'pageSize'=>$this->setting->pagesize,
 						)
 				));
 		$this->render('index',array(

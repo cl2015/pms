@@ -125,7 +125,7 @@ class StandardController extends Controller
 	{
 		$dataProvider=new CActiveDataProvider('Standard',
 						array('pagination'=>array(
-									'pageSize'=>'100'
+									'pageSize'=>$this->setting->pagesize,
 							)
 				));
 		$this->render('index',array(
