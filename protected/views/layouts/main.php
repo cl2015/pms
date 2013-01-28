@@ -72,7 +72,7 @@
 
 	<div class="clear"></div>
 
-	<div id="footer" style="font-size:18px;">
+	<div id="footer" style="font-size:12px;">
 		Copyright &copy; <?php echo date('Y'); ?> by <?php echo $this->setting->copyright;?>.<br/>
 <!-- 		All Rights Reserved.<br/> -->
 	</div><!-- footer -->

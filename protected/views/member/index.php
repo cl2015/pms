@@ -9,6 +9,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'创建', 'url'=>array('create')),
 	array('label'=>'管理', 'url'=>array('admin')),
+	array('label'=>'导出', 'url'=>array('export')),
 );
 ?>
 

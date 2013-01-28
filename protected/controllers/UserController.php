@@ -169,4 +169,13 @@ class UserController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	public function actionExport(){
+		$users = User::model()->findAll();
+		$this->layout = false;
+		$filename = 'users';
+		header('Content-type:application/csv;charset=utf8'); //表示输出Excel文件
+		header('Content-Disposition:attachment; filename=' . $filename . '.csv');//文件名
+		$this->render('export',array('users'=>$users));
+	}
 }

@@ -28,11 +28,11 @@ class MemberController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','export'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','export'),
 				'users'=>array('@'),
 				'expression'=>'$user->isAdmin||$user->isEditor',
 			),
@@ -176,5 +176,14 @@ class MemberController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionExport(){
+		$members = Member::model()->findAll();
+		$this->layout = false;
+		$filename = 'members';
+		header('Content-type:text/csv;charset=utf8'); //表示输出Excel文件
+		header('Content-Disposition:attachment; filename=' . $filename . '.csv');//文件名
+		$this->render('export',array('members'=>$members));
 	}
 }

@@ -81,7 +81,7 @@ class Paper extends TrackStarActiveRecord
 			'periodical_info' => '期刊信息',
 			'paper_category' => '论著类别',
 			'research_direction' => '方向',
-			'detail' => '详情',
+			'detail' => '证据',
 			'created_by' => 'Created By',
 			'created_at' => 'Created At',
 			'updated_by' => 'Updated By',
