@@ -46,10 +46,10 @@ return array(
 		),
 		// uncomment the following to use a MySQL database
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=pms',
+			'connectionString' => 'mysql:host=localhost;dbname=nklmis',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'dev',
+			'password' => 'dell1234',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(
