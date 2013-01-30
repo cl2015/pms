@@ -65,6 +65,11 @@
 		<?php echo $form->label($model,'title'); ?>
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>64)); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->label($model,'honorary_title'); ?>
+		<?php echo $form->textField($model,'honorary_title',array('size'=>60,'maxlength'=>64)); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'area_of_expertise'); ?>

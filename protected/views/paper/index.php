@@ -11,8 +11,6 @@ $this->menu=array(
 	array('label'=>'管理', 'url'=>array('admin')),
 );
 ?>
-
-<h1>论著</h1>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(

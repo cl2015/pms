@@ -24,6 +24,7 @@
  * @property string $created_at
  * @property string $updated_by
  * @property string $updated_at
+ * @property string $honorary_title
  */
 class Member extends TrackStarActiveRecord
 {
@@ -55,12 +56,12 @@ class Member extends TrackStarActiveRecord
 		return array(
 			array('sort', 'numerical', 'integerOnly'=>true),
 			array('research_direction, research_unit, english_name, phd_mentor, master_mentor', 'length', 'max'=>256),
-			array('name, date_of_birth, gender, qualification, degree, title, area_of_expertise, enter_date, out_date', 'length', 'max'=>64),
+			array('name, date_of_birth, gender, qualification, degree, title, area_of_expertise, enter_date, out_date, honorary_title', 'length', 'max'=>64),
 			array('created_by, updated_by', 'length', 'max'=>10),
 			array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, sort, research_direction, research_unit, name, english_name, date_of_birth, gender, qualification, degree, title, area_of_expertise, phd_mentor, master_mentor, enter_date, out_date, created_by, created_at, updated_by, updated_at', 'safe', 'on'=>'search'),
+			array('id, sort, research_direction, research_unit, name, english_name, date_of_birth, gender, qualification, degree, title, area_of_expertise, phd_mentor, master_mentor, enter_date, out_date, created_by, created_at, updated_by, updated_at, honorary_title', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -87,7 +88,7 @@ class Member extends TrackStarActiveRecord
 			'research_unit' => '所属单元',
 			'name' => '中文名',
 			'english_name' => '英文名',
-			'date_of_birth' => '出生日期',
+			'date_of_birth' => '出生日期(yyyy-mm-dd)',
 			'gender' => '性别',
 			'qualification' => '学历',
 			'degree' => '学位',
@@ -101,6 +102,7 @@ class Member extends TrackStarActiveRecord
 			'created_at' => 'Created At',
 			'updated_by' => 'Updated By',
 			'updated_at' => 'Updated At',
+			'honorary_title' => '学术头衔/荣誉称号',
 		);
 	}
 

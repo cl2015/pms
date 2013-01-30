@@ -11,9 +11,6 @@ $this->menu=array(
 	array('label'=>'管理', 'url'=>array('admin')),
 );
 ?>
-
-<h1>课题类别</h1>
-
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'subject-category-grid',
 	'dataProvider'=>$dataProvider,

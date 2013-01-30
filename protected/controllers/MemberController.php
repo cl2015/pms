@@ -178,12 +178,12 @@ class MemberController extends Controller
 		}
 	}
 	
-	public function actionExport(){
+	public function actionExport($years){
 		$members = Member::model()->findAll();
 		$this->layout = false;
-		$filename = 'members';
+		$filename = 'table10';
 		header('Content-type:text/csv;charset=utf8'); //表示输出Excel文件
-		header('Content-Disposition:attachment; filename=' . $filename . '.csv');//文件名
-		$this->render('export',array('members'=>$members));
+		header('Content-Disposition:attachment; filename=' . $filename . '.xls');//文件名
+		$this->render('export',array('members'=>$members,'years'=>$years));
 	}
 }

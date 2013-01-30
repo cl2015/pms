@@ -48,6 +48,10 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
 	<?php echo CHtml::encode($data->title); ?>
 	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('honorary_title')); ?>:</b>
+	<?php echo CHtml::encode($data->honorary_title); ?>
+	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('area_of_expertise')); ?>:</b>
 	<?php echo CHtml::encode($data->area_of_expertise); ?>

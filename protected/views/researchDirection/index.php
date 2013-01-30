@@ -11,9 +11,6 @@ $this->menu=array(
 	array('label'=>'管理', 'url'=>array('admin')),
 );
 ?>
-
-<h1>研究方向</h1>
-
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'research-direction-grid',
 	'dataProvider'=>$dataProvider,

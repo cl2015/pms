@@ -9,12 +9,9 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'创建', 'url'=>array('create')),
 	array('label'=>'管理', 'url'=>array('admin')),
-	array('label'=>'导出', 'url'=>array('export')),
+	array('label'=>'导出', 'url'=>array('export'),'linkOptions'=>array('onclick'=>'var years = prompt("years",2012);if(years==null){return false;}else{this.href+="?years="+years}','id'=>'abc')),
 );
 ?>
-
-<h1>人员</h1>
-
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'member-grid',
 	'dataProvider'=>$dataProvider,
@@ -40,5 +37,6 @@ $this->menu=array(
 		'master_mentor',
 		'enter_date',
 		'out_date',
+		'honorary_title',
 	),
 )); ?>

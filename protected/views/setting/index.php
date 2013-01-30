@@ -11,9 +11,6 @@ $this->menu=array(
 	array('label'=>'Manage Setting', 'url'=>array('admin')),
 );
 ?>
-
-<h1>Settings</h1>
-
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',

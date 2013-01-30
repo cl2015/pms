@@ -74,6 +74,12 @@
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>64)); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'honorary_title'); ?>
+		<?php echo $form->textField($model,'honorary_title',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->error($model,'honorary_title'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'area_of_expertise'); ?>
