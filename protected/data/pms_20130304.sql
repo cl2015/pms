@@ -1,0 +1,4 @@
+ALTER TABLE `pms`.`settings` ADD COLUMN `member_column` varchar(255) AFTER `name`, CHANGE COLUMN `image` `image` varchar(256) DEFAULT NULL AFTER `member_column`, CHANGE COLUMN `created_by` `created_by` int(10) UNSIGNED DEFAULT NULL AFTER `image`, CHANGE COLUMN `created_at` `created_at` datetime DEFAULT NULL AFTER `created_by`, CHANGE COLUMN `updated_by` `updated_by` int(10) UNSIGNED DEFAULT NULL AFTER `created_at`, CHANGE COLUMN `updated_at` `updated_at` datetime DEFAULT NULL AFTER `updated_by`;
+ALTER TABLE `pms`.`settings` ADD COLUMN `ages` varchar(255) AFTER `updated_at`;
+ALTER TABLE `pms`.`settings` CHANGE COLUMN `ages` `ages` tinyint(4) DEFAULT NULL, ADD COLUMN `ages2` tinyint(4) AFTER `ages`;
+ALTER TABLE `pms`.`settings` CHANGE COLUMN `ages` `age1` tinyint(4) DEFAULT NULL, CHANGE COLUMN `ages2` `age2` tinyint(4) DEFAULT NULL;

@@ -28,6 +28,25 @@
  */
 class Member extends TrackStarActiveRecord
 {
+	public $column = array(
+			'sort' => '排序',
+			'research_direction' => '所属方向',
+			'research_unit' => '所属单元',
+			'name' => '中文名',
+			'english_name' => '英文名',
+			'date_of_birth' => '出生日期(yyyy-mm-dd)',
+			'gender' => '性别',
+			'qualification' => '学历',
+			'degree' => '学位',
+			'title' => '职称',
+			'area_of_expertise' => '专业领域',
+			'phd_mentor' => '博导',
+			'master_mentor' => '硕导',
+			'enter_date' => '进室时间',
+			'out_date' => '出室时间',
+			'honorary_title' => '学术头衔/荣誉称号',
+
+			);
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -57,6 +76,8 @@ class Member extends TrackStarActiveRecord
 			array('sort', 'numerical', 'integerOnly'=>true),
 			array('research_direction, research_unit, english_name, phd_mentor, master_mentor', 'length', 'max'=>256),
 			array('name, date_of_birth, gender, qualification, degree, title, area_of_expertise, enter_date, out_date, honorary_title', 'length', 'max'=>64),
+			array('date_of_birth','length','max'=>10),
+			array('date_of_birth','length','min'=>10),
 			array('created_by, updated_by', 'length', 'max'=>10),
 			array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
@@ -142,4 +163,5 @@ class Member extends TrackStarActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
 }

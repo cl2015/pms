@@ -9,6 +9,8 @@
  * @property string $pagesize
  * @property string $name
  * @property string $image
+ * @property int $age1
+ * @property int $age2
  * @property string $created_by
  * @property string $created_at
  * @property string $updated_by
@@ -42,9 +44,12 @@ class Setting extends TrackStarActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('copyright, name', 'length', 'max'=>255),
+			array('copyright, name, member_column', 'length', 'max'=>255),
+			array('age1,age2,member_column', 'required'),
+			array('age1', 'age'),
 			array('pagesize, created_by, updated_by', 'length', 'max'=>10),
 			array('image', 'length', 'max'=>256),
+			array('age1,age2', 'numerical', 'integerOnly'=>true),
 			array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -74,6 +79,7 @@ class Setting extends TrackStarActiveRecord
 			'pagesize' => 'Pagesize',
 			'name' => '系统名称',
 			'image' => '封面图片',
+			'member_column' =>'选中列表页面显示的项',
 			'created_by' => 'Created By',
 			'created_at' => 'Created At',
 			'updated_by' => 'Updated By',
@@ -105,5 +111,11 @@ class Setting extends TrackStarActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	public function age($attribute,$params){
+		$labels = $this->attributeLabels();
+		if($this->age1 >= $this->age2){
+			$this->addError('age1','Age1 要小于 Age2');
+		}
 	}
 }

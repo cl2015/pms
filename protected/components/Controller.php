@@ -24,4 +24,18 @@ class Controller extends CController
 	public function init(){
 		$this->setting = Setting::model()->findByPk(1);
 	}
+	public function string2array($string){
+		$array = array();
+		if(!empty($string)){
+			$array = explode(',',$string);
+		}
+		return $array;
+	}
+	public function array2string($array){
+		$string = '';
+		if(is_array($array)){
+			$string = implode(',',$array);
+		}
+		return $string;
+	}
 }

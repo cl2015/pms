@@ -32,7 +32,7 @@ class MemberController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','export'),
+				'actions'=>array('create','update','export','setting','stat','access'),
 				'users'=>array('@'),
 				'expression'=>'$user->isAdmin||$user->isEditor',
 			),
@@ -123,6 +123,11 @@ class MemberController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$setting = Setting::model()->findByPk(1);
+		$column = '';
+		if(isset($setting)){
+			$column = $setting->member_column;
+		}
 		$dataProvider=new CActiveDataProvider('Member' , 
 				array( 
 						'criteria'=>array(
@@ -134,6 +139,7 @@ class MemberController extends Controller
 				));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'column'=>$this->string2array($column),
 		));
 	}
 
@@ -185,5 +191,70 @@ class MemberController extends Controller
 		header('Content-type:text/csv;charset=utf8'); //表示输出Excel文件
 		header('Content-Disposition:attachment; filename=' . $filename . '.xls');//文件名
 		$this->render('export',array('members'=>$members,'years'=>$years));
+	}
+	
+	public function actionSetting(){
+		$model = Setting::model()->findByPk(1);
+		if(isset($_POST['Setting']))
+		{
+			$model->attributes=$_POST['Setting'];
+			$model->member_column = $this->array2string($model->member_column);
+			if($model->save())
+				$this->redirect(array('index'));
+		}
+		$model->member_column = $this->string2array($model->member_column);
+		$this->render('setting',array(
+			'model'=>$model,
+		));
+	}
+	
+	public function actionStat(){
+		$setting = Setting::model()->findByPk(1);
+		//age pie
+		$pieLess = Member::model()->count("date_of_birth < :date1",
+				array(':date1'=>(date('Y') - $setting->age1) . date('-m-d')));
+		$pieBetween = Member::model()->count("date_of_birth between :date1 and :date2 ",
+				array(':date1'=>(date('Y') - $setting->age1) . date('-m-d') ,':date2'=>(date('Y') - $setting->age2) . date('-m-d')));
+		$pieMore = Member::model()->count("date_of_birth > :date2",
+				array(':date2'=>(date('Y') - $setting->age2) . date('-m-d')));
+		//title pie
+		$criteria = new CDbCriteria();
+		$criteria->group = 'title';
+		$criteria->select = 'title,count(id) as id';
+		$titlePie = Member::model()->findAll($criteria);
+		//research_direction Histogram
+		$researchDirectionCriteria = new CDbCriteria();
+		$researchDirectionCriteria->select = 'research_direction,count(id) as id';
+		$researchDirectionCriteria->group = 'research_direction';
+		$researchDirections = Member::model()->findAll($researchDirectionCriteria);
+		
+		$this->render('stat',array(
+				'ages'=>array(
+						'less than '.$setting->age1 => $pieLess,
+						'between '.$setting->age1 . ' and ' . $setting->age2 => $pieBetween,
+						'more than '. $setting->age2 => $pieMore),
+				'titles' => $titlePie,
+				'researchDirections' => $researchDirections
+				));
+	}
+	
+	public function actionAccess(){
+		$members = Member::model()->findAll();
+		$dsn = "DRIVER={Microsoft Access Driver (*.mdb)};DBQ=".realpath(Yii::app()->basePath  . '/protected/www.mdb');
+		$conn = @odbc_connect($dsn,Yii::app()->params['access']['username'],Yii::app()->params['access']['password'],SQL_CUR_USE_ODBC ) or die ("Connect Error!");
+		
+		foreach($members as $member){
+			@odbc_exec($conn,"insert into table10 (xh,xm,xb,csny,zc,xstx,zzxl,zytc,years) values (" . 
+					"'" . iconv("UTF-8","GBK//IGNORE",empty($member->sort)?' ':$member->sort) . "'," .
+					"'" . iconv("UTF-8","GBK//IGNORE",empty($member->name)?' ':$member->name) . "'," .
+					"'" . iconv("UTF-8","GBK//IGNORE",empty($member->gender)?' ':$member->gender) . "'," .
+					"'" . iconv("UTF-8","GBK//IGNORE",empty($member->date_of_birth)?'0000-00-00':$member->date_of_birth) . "'," .
+					"'" . iconv("UTF-8","GBK//IGNORE",empty($member->title)?' ':$member->title) . "'," .
+					"'" . iconv("UTF-8","GBK//IGNORE",empty($member->qualification)?' ':$member->qualification) . "'," .
+					"'" . iconv("UTF-8","GBK//IGNORE",empty($member->honorary_title)?' ':$member->honorary_title) . "'," .
+					"'" . iconv("UTF-8","GBK//IGNORE",empty($member->area_of_expertise)?' ':$member->area_of_expertise) . "'," .
+					"'" . date('Y') . "')");
+		}
+		echo 'export ok';
 	}
 }

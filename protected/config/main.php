@@ -46,10 +46,12 @@ return array(
 		),
 		// uncomment the following to use a MySQL database
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=nklmis',
+			//'connectionString' => 'mysql:host=localhost;dbname=nklmis',
+			'connectionString' => 'mysql:host=localhost;dbname=pms',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'dell1234',
+			//'password' => 'dell1234',
+			'password' => 'dev',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(
@@ -78,5 +80,9 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
+		'access'=>array(
+				'username'=>'',
+				'password'=>'',
+		),
 	),
 );
