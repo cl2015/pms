@@ -71,7 +71,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->dropDownList($model,'title',Member::model()->getTitleOptions(),array('empty'=>'请选择')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 	

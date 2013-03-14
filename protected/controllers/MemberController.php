@@ -211,16 +211,17 @@ class MemberController extends Controller
 	public function actionStat(){
 		$setting = Setting::model()->findByPk(1);
 		//age pie
-		$pieLess = Member::model()->count("date_of_birth < :date1",
+		$pieMore = Member::model()->count("date_of_birth < :date1",
 				array(':date1'=>(date('Y') - $setting->age1) . date('-m-d')));
 		$pieBetween = Member::model()->count("date_of_birth between :date1 and :date2 ",
 				array(':date1'=>(date('Y') - $setting->age1) . date('-m-d') ,':date2'=>(date('Y') - $setting->age2) . date('-m-d')));
-		$pieMore = Member::model()->count("date_of_birth > :date2",
+		$pieLess = Member::model()->count("date_of_birth > :date2",
 				array(':date2'=>(date('Y') - $setting->age2) . date('-m-d')));
 		//title pie
 		$criteria = new CDbCriteria();
 		$criteria->group = 'title';
 		$criteria->select = 'title,count(id) as id';
+		$criteria->order  = " field (title,'研究员实习员','助理研究员','副研究员','研究员') desc";
 		$titlePie = Member::model()->findAll($criteria);
 		//research_direction Histogram
 		$researchDirectionCriteria = new CDbCriteria();
@@ -240,7 +241,7 @@ class MemberController extends Controller
 	
 	public function actionAccess(){
 		$members = Member::model()->findAll();
-		$dsn = "DRIVER={Microsoft Access Driver (*.mdb)};DBQ=".realpath(Yii::app()->basePath  . '/protected/www.mdb');
+		$dsn = "DRIVER={Microsoft Access Driver (*.mdb)};DBQ=".realpath(Yii::app()->params['access']['path']);
 		$conn = @odbc_connect($dsn,Yii::app()->params['access']['username'],Yii::app()->params['access']['password'],SQL_CUR_USE_ODBC ) or die ("Connect Error!");
 		
 		foreach($members as $member){

@@ -83,6 +83,7 @@ return array(
 		'access'=>array(
 				'username'=>'',
 				'password'=>'',
+				'path'=>'',
 		),
 	),
 );

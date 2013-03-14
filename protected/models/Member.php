@@ -73,6 +73,7 @@ class Member extends TrackStarActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('title, date_of_birth', 'required'),
 			array('sort', 'numerical', 'integerOnly'=>true),
 			array('research_direction, research_unit, english_name, phd_mentor, master_mentor', 'length', 'max'=>256),
 			array('name, date_of_birth, gender, qualification, degree, title, area_of_expertise, enter_date, out_date, honorary_title', 'length', 'max'=>64),
@@ -162,6 +163,15 @@ class Member extends TrackStarActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function getTitleOptions(){
+		return array(
+				'研究员'=>'研究员',
+				'副研究员'=>'副研究员',
+				'助理研究员'=>'助理研究员',
+				'研究员实习员'=>'研究员实习员',
+		);
 	}
 	
 }
