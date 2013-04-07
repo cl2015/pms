@@ -231,9 +231,9 @@ class MemberController extends Controller
 		
 		$this->render('stat',array(
 				'ages'=>array(
-						'less than '.$setting->age1 => $pieLess,
-						'between '.$setting->age1 . ' and ' . $setting->age2 => $pieBetween,
-						'more than '. $setting->age2 => $pieMore),
+						$setting->age1 . '岁以下' => $pieLess ,
+						$setting->age1 . '-' . $setting->age2 . '岁' => $pieBetween,
+						$setting->age2 . '岁以上' => $pieMore),
 				'titles' => $titlePie,
 				'researchDirections' => $researchDirections
 				));

@@ -80,6 +80,8 @@ class Setting extends TrackStarActiveRecord
 			'name' => '系统名称',
 			'image' => '封面图片',
 			'member_column' =>'选中列表页面显示的项',
+			'age1'=>'年龄段分界1',
+			'age2'=>'年龄段分界2',	
 			'created_by' => 'Created By',
 			'created_at' => 'Created At',
 			'updated_by' => 'Updated By',

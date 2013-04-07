@@ -114,8 +114,12 @@ class Honor extends TrackStarActiveRecord
 		$criteria->compare('updated_by',$this->updated_by,true);
 		$criteria->compare('updated_at',$this->updated_at,true);
 
+		$setting = Setting::model()->findByPk(1);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array(
+					'pageSize'=>$setting->pagesize,
+			)
 		));
 	}
 	/**

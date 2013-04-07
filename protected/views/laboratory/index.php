@@ -14,7 +14,7 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'laboratory-grid',
 	'dataProvider'=>$dataProvider,
-	'enableSorting'=>false,
+	'enableSorting'=>true,
 	'columns'=>array(
 		array(
 			'type'=>'raw',

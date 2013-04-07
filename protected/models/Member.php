@@ -34,7 +34,7 @@ class Member extends TrackStarActiveRecord
 			'research_unit' => '所属单元',
 			'name' => '中文名',
 			'english_name' => '英文名',
-			'date_of_birth' => '出生日期(yyyy-mm-dd)',
+			'date_of_birth' => '出生日期',
 			'gender' => '性别',
 			'qualification' => '学历',
 			'degree' => '学位',
@@ -110,7 +110,7 @@ class Member extends TrackStarActiveRecord
 			'research_unit' => '所属单元',
 			'name' => '中文名',
 			'english_name' => '英文名',
-			'date_of_birth' => '出生日期(yyyy-mm-dd)',
+			'date_of_birth' => '出生日期',
 			'gender' => '性别',
 			'qualification' => '学历',
 			'degree' => '学位',
@@ -159,9 +159,13 @@ class Member extends TrackStarActiveRecord
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_by',$this->updated_by,true);
 		$criteria->compare('updated_at',$this->updated_at,true);
-
+		
+		$setting = Setting::model()->findByPk(1);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array(
+					'pageSize'=>$setting->pagesize,
+			)
 		));
 	}
 	
